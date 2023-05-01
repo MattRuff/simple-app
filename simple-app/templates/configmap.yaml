@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: simple-app-configmap
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "Hello World"
