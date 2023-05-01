@@ -5,8 +5,9 @@ metadata:
 spec:
   containers:
   - name: web
-    image: docker.io/library/simple_python_app_web    
+    image: "mattruyffelaert/simple-app:v2"
     ports:
     - containerPort: 8080
-  #- name: redis
-  #  image: "redis:alpine"
+  - name: redis
+    image: "redis:alpine"
+
