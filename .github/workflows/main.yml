@@ -17,6 +17,6 @@ jobs:
         run: helm install sample-app sample-app/ --debug --dry-run
       
       - name: test if it works 
-        if: contains(steps.helm-check.output, "INSTALLATION FAILED") == false
-        run: echo "This is a valid push"
+        if: contains(steps.helm-check.output, 'INSTALLATION FAILED') == false
+        run: echo 'This is a valid push'
         
