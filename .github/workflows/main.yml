@@ -23,6 +23,6 @@ jobs:
         run: helm install sample-app .
       
       - name: test if it works 
-        if: contains(steps.helm-check.output, "Error: INSTALLATION FAILED") == false
+        if: contains(steps.helm-check.output, "INSTALLATION FAILED") == false
         run: echo "This is a valid push"
         
