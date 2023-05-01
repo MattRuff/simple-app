@@ -8,5 +8,5 @@ spec:
     image: docker.io/library/simple_python_app_web    
     ports:
     - containerPort: 8080
-  - redis:
+  - name: redis
     image: "redis:alpine"
