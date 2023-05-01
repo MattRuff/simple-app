@@ -5,22 +5,14 @@ jobs:
     steps: 
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Set up Helm
-        uses: azure/setup-helm@v3
-        with:
-          version: v3.11.2
-
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-          check-latest: true
+          
+      - name: start minikube
+        id: minikube
+        uses: medyagh/setup-minikube@master
       
       - name: validate the chart can be built
         id: helm-check
-        run: helm install sample-app .
+        run: helm install sample-app sample-app/ --debug --dry-run
       
       - name: test if it works 
         if: contains(steps.helm-check.output, "INSTALLATION FAILED") == false
